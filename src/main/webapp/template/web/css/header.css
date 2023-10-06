@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.headerr {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+header {
+  z-index: 999;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  height: 100px;
+  width: 100%;
+  padding: 10px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 4px 40px 0px rgba(6, 6, 6, 0.1);
+}
+
+header .logo img {
+  width: 20%;
+}
+
+header .nav a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 1px;
+  padding: 2px 15px;
+  border-radius: 20px;
+  transition: 0.3s;
+  font-size: 18px;
+  transition-property: background;
+  font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+header .nav a:not(:last-child) {
+  margin-right: 30px;
+}
+
+header .nav a:hover {
+  background: #A8E1F4;
+}
+
+.label {
+  display: none;
+}
+
+#check {
+  z-index: 3;
+  display: none;
+}
+
+@media(max-width:960px) {
+  header .nav {
+    display: none;
+  }
+
+  .label {
+    display: block;
+    font-size: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+    transition-property: color;
+  }
+
+  .label:hover {
+    color: #fff;
+  }
+
+  .label .fa-x {
+    display: none;
+  }
+
+  #check:checked~header .nav {
+    z-index: 2;
+    position: fixed;
+    background: rgba(114, 223, 255, 0.9);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #check:checked~header .nav a {
+    font-weight: 700;
+    margin-right: 0;
+    margin-bottom: 50px;
+  }
+
+  #check:checked~header .label .fa-bars {
+    display: none;
+  }
+
+  #check:checked~header .label .fa-x {
+    z-index: 2;
+    display: block;
+    position: fixed;
+  }
+
+  .label .fa-bars {
+    position: absolute;
+  }
+
+  header {
+    padding: 30px 100px;
+  }
+
+  header .logo {
+    position: absolute;
+    bottom: 0px;
+  }
+}
