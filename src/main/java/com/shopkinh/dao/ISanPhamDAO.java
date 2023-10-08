@@ -10,4 +10,5 @@ public interface ISanPhamDAO {
     void delete(long id);
     List<SanPhamModel> findAll();
     SanPhamModel findOne(Long id);
+    
 }
